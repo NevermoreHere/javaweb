@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<!--    <properties resource="./src/main/resources/tools/jdbc.properties"/>-->
+<!--    <properties resource="/Users/xulide/IdeaProjects/javaweb/gradle.properties"/>-->
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <commentGenerator>
+            <!--  不生成所有注释，默认为 false  -->
+            <property name="suppressAllComments" value="false"></property>
+            <!--  生成的注释中不包含时间信息，默认为 false -->
+            <property name="suppressDate" value="true"></property>
+            <property name="javaFileEncoding" value="utf-8"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/userdb?serverTimezone=GMT&amp;characterEncoding=utf8"
+                        userId="root"
+                        password="1qa2ws3ed">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="./src/model" targetProject="./">
+            <!-- 在 targetPackage 的基础上，根据数据库的 schema 再生成一层 package-->
+          <property name="enableSubPackages" value="false"></property>
+            <!-- 设置在 getter 方法中，是否对 String 类型的字段调用 trim() 方法；默认为 false -->
+            <property name="trimStrings" value="true"></property>
+      </javaModelGenerator>
+
+      <sqlMapGenerator targetPackage="./src/mapper" targetProject="./">
+          <property name="enableSubPackages" value="false"></property>
+      </sqlMapGenerator>
+
+
+      <javaClientGenerator targetPackage="./src/xml" targetProject="./" type="XMLMAPPER">
+          <property name="enableSubPackages" value="false"/>
+      </javaClientGenerator>
+
+        <table tableName="c_student"
+               domainObjectName="Student" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <property name="id" value="true"/>
+            <property name="name" value="true"/>
+
+        </table>
+  </context></generatorConfiguration>
