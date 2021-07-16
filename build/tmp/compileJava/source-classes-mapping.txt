@@ -12,5 +12,7 @@ com/example/Student/service/impl/CStudentServiceImpl.java
  com.example.Student.service.impl.CStudentServiceImpl
 com/example/Student/entity/CStudent.java
  com.example.Student.entity.CStudent
+com/example/utils/CommonResult.java
+ com.example.utils.CommonResult
 com/example/Student/controller/CStudentController.java
  com.example.Student.controller.CStudentController
