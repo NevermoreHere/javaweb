@@ -1,18 +1,32 @@
+com/example/Student/mapper/CStudentMapper.java
+ com.example.Student.mapper.CStudentMapper
 com/example/Application.java
  com.example.Application
+com/example/User/mapper/UserMapper.java
+ com.example.User.mapper.UserMapper
+com/example/Utils/CommonResult.java
+ com.example.Utils.CommonResult
+com/example/Filter/MyFilter.java
+ com.example.Filter.MyFilter
+com/example/Student/service/impl/CStudentServiceImpl.java
+ com.example.Student.service.impl.CStudentServiceImpl
+com/example/Student/controller/CStudentController.java
+ com.example.Student.controller.CStudentController
+com/example/Student/service/ICStudentService.java
+ com.example.Student.service.ICStudentService
+com/example/SwaggerConfig.java
+ com.example.SwaggerConfig
+com/example/Student/entity/CStudent.java
+ com.example.Student.entity.CStudent
+com/example/User/service/IUserService.java
+ com.example.User.service.IUserService
+com/example/User/entity/User.java
+ com.example.User.entity.User
+com/example/User/controller/UserController.java
+ com.example.User.controller.UserController
 com/example/CodeGenerator.java
  com.example.CodeGenerator
  com.example.CodeGenerator$1
  com.example.CodeGenerator$2
-com/example/Student/mapper/CStudentMapper.java
- com.example.Student.mapper.CStudentMapper
-com/example/Student/service/ICStudentService.java
- com.example.Student.service.ICStudentService
-com/example/Student/service/impl/CStudentServiceImpl.java
- com.example.Student.service.impl.CStudentServiceImpl
-com/example/Student/entity/CStudent.java
- com.example.Student.entity.CStudent
-com/example/utils/CommonResult.java
- com.example.utils.CommonResult
-com/example/Student/controller/CStudentController.java
- com.example.Student.controller.CStudentController
+com/example/User/service/impl/UserServiceImpl.java
+ com.example.User.service.impl.UserServiceImpl

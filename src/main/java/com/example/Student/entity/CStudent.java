@@ -1,8 +1,8 @@
 package com.example.Student.entity;
 
-import java.io.Serializable;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -13,7 +13,6 @@ import lombok.EqualsAndHashCode;
  * @since 2021-07-08
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class CStudent implements Serializable {
 
     private static final long serialVersionUID = 1L;

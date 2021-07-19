@@ -120,6 +120,9 @@ public class CodeGenerator {
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
+        strategy.setEntityLombokModel(true);
+        strategy.setLogicDeleteFieldName("is_delete");
+        strategy.setEntityBooleanColumnRemoveIsPrefix(true);
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
 //        strategy.setSuperEntityClass("你自己的父类实体,没有就不用设置!");

@@ -21,8 +21,6 @@ public class CStudentServiceImpl extends ServiceImpl<CStudentMapper, CStudent> i
     CStudentMapper cStudentMapper;
 
     public CStudent getStudent(){
-        CStudent s = cStudentMapper.selectById(1L);
-        System.out.println(s);
-        return s;
+        return cStudentMapper.selectById(1L);
     }
 }
