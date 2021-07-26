@@ -4,3 +4,11 @@ spring:
     url: jdbc:mysql://localhost/userdb
     username: root
     password: 1qa2ws3ed
+
+  session:
+    store-type: redis
+
+  redis:
+    host: 47.102.192.55
+    port: 6380
+    password:

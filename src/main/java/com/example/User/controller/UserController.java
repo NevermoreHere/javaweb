@@ -12,6 +12,8 @@ import org.apache.catalina.manager.util.SessionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,12 +34,15 @@ public class UserController {
 
     @PostMapping("/login")
     @ApiOperation(value = "登录")
-    public CommonResult login(@RequestBody @ApiParam(value = "user login", required = true) User user) {
+    public CommonResult login(HttpServletRequest request, @RequestBody @ApiParam(value = "user login", required = true) User user) {
         String username = user.getUserName();//用户名
         String password = user.getPassword();//密码
         //查询用户名和密码是否匹配,是否存在
         User res_user = userService.verifyPassword(username, password);
         if (null != res_user) {
+            HttpSession session = request.getSession();
+            session.setAttribute(session.getId(),user);
+
             return new CommonResult(res_user);
         }
         CommonResult cr = new CommonResult<User>();

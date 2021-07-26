@@ -1,32 +1,53 @@
-com/example/Student/mapper/CStudentMapper.java
- com.example.Student.mapper.CStudentMapper
-com/example/Application.java
- com.example.Application
-com/example/User/mapper/UserMapper.java
- com.example.User.mapper.UserMapper
-com/example/Utils/CommonResult.java
- com.example.Utils.CommonResult
-com/example/Filter/MyFilter.java
- com.example.Filter.MyFilter
-com/example/Student/service/impl/CStudentServiceImpl.java
- com.example.Student.service.impl.CStudentServiceImpl
-com/example/Student/controller/CStudentController.java
- com.example.Student.controller.CStudentController
-com/example/Student/service/ICStudentService.java
- com.example.Student.service.ICStudentService
-com/example/SwaggerConfig.java
- com.example.SwaggerConfig
-com/example/Student/entity/CStudent.java
- com.example.Student.entity.CStudent
-com/example/User/service/IUserService.java
- com.example.User.service.IUserService
 com/example/User/entity/User.java
  com.example.User.entity.User
+com/example/Application.java
+ com.example.Application
+com/example/Video/controller/VideoController.java
+ com.example.Video.controller.VideoController
+com/example/Interceptor/MyInterceptor.java
+ com.example.Interceptor.MyInterceptor
 com/example/User/controller/UserController.java
  com.example.User.controller.UserController
+com/example/Config/WebConfig.java
+ com.example.Config.WebConfig
+com/example/Video/service/IVideoService.java
+ com.example.Video.service.IVideoService
+com/example/Utils/EmitEmail.java
+ com.example.Utils.EmitEmail
 com/example/CodeGenerator.java
  com.example.CodeGenerator
  com.example.CodeGenerator$1
  com.example.CodeGenerator$2
+com/example/Filter/MyFilter.java
+ com.example.Filter.MyFilter
+com/example/Student/service/impl/CStudentServiceImpl.java
+ com.example.Student.service.impl.CStudentServiceImpl
 com/example/User/service/impl/UserServiceImpl.java
  com.example.User.service.impl.UserServiceImpl
+com/example/Student/service/ICStudentService.java
+ com.example.Student.service.ICStudentService
+com/example/Video/entity/Video.java
+ com.example.Video.entity.Video
+com/example/User/service/IUserService.java
+ com.example.User.service.IUserService
+com/example/SwaggerConfig.java
+ com.example.SwaggerConfig
+com/example/Video/service/impl/VideoServiceImpl.java
+ com.example.Video.service.impl.VideoServiceImpl
+com/example/Utils/CommonResult.java
+ com.example.Utils.CommonResult
+com/example/Student/mapper/CStudentMapper.java
+ com.example.Student.mapper.CStudentMapper
+com/example/Others/ooT.java
+ com.example.Others.ooT
+ com.example.Others.ooT$ClassPathXmlApplicationContext
+com/example/Student/controller/CStudentController.java
+ com.example.Student.controller.CStudentController
+com/example/Video/mapper/VideoMapper.java
+ com.example.Video.mapper.VideoMapper
+com/example/Student/entity/CStudent.java
+ com.example.Student.entity.CStudent
+com/example/User/mapper/UserMapper.java
+ com.example.User.mapper.UserMapper
+com/example/Utils/ReceiveMail.java
+ com.example.Utils.ReceiveMail

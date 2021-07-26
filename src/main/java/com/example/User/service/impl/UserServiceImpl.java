@@ -7,6 +7,7 @@ import com.example.User.entity.User;
 import com.example.User.mapper.UserMapper;
 import com.example.User.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.Utils.EmailUtils;
 import com.rabbitmq.tools.json.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         user.setPassword(md5);
         try {
             userMapper.insert(user);
+
         }catch (
                 Exception e
         )
