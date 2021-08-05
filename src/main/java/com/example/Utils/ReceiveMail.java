@@ -7,6 +7,8 @@ import com.rabbitmq.client.DeliverCallback;
 
 public class ReceiveMail {
     private static final String EXCHANGE_NAME = "email";
+    private static final String QUEUE_NAME = "email_queue";
+    private static final String ROUTING_KEY1 = "email.#";
 
     public static void main(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
@@ -14,11 +16,11 @@ public class ReceiveMail {
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
-        channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
+        channel.exchangeDeclare(EXCHANGE_NAME, "topic");
         //定义一个匿名额队列
-        String queueName = channel.queueDeclare().getQueue();
+        String queueName = channel.queueDeclare(QUEUE_NAME, true, false, false, null).getQueue();
         //将队列和交换机绑定
-        channel.queueBind(queueName, EXCHANGE_NAME, "");
+        channel.queueBind(queueName, EXCHANGE_NAME, ROUTING_KEY1);
 
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 

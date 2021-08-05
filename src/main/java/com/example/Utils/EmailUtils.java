@@ -7,20 +7,24 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class EmailUtils {
-    public static Transport createConnection() throws MessagingException {
+    private Session session;
+    private Transport transport;
+
+    public EmailUtils() throws MessagingException {
         Properties prop = new Properties();
-        prop.setProperty("mail.host", "stmp.qq.com");
+        prop.setProperty("mail.host", "smtp.office365.com");
         prop.setProperty("mail.transport.protocol", "smtp");
-        prop.setProperty("mail.smtp.auth", "true");
+        prop.setProperty("mail.smtp.starttls.enable", "true");
         Session session= Session.getInstance(prop);
 
         Transport ts=session.getTransport();
-        ts.connect("smtp.qq.com", 587, "qq", "code");
-        return ts;
+        ts.connect("smtp.office365.com", 587, "xulide123@outlook.com", "xld353142927");
+        this.session = session;
+        this.transport = ts;
     }
 
-    public static Message createMail(String fromEmail, String toEmail, String emailMsg, Session session) throws MessagingException {
-        MimeMessage message = new MimeMessage(session);
+    public Message createMail(String fromEmail, String toEmail, String emailMsg) throws MessagingException {
+        MimeMessage message = new MimeMessage(this.session);
         message.setFrom(new InternetAddress(fromEmail));
         message.setRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
         message.setSubject("激活");
@@ -28,8 +32,13 @@ public class EmailUtils {
         return message;
     }
 
-    public void sendMessage(Message message, Transport ts) throws MessagingException {
-        ts.sendMessage(message, message.getAllRecipients());
+    public void sendMessage(Message message) throws MessagingException {
+        this.transport.sendMessage(message, message.getAllRecipients());
     }
 
+    public static void main(String[] args) throws MessagingException {
+        EmailUtils emailUtils = new EmailUtils();
+        Message msg = emailUtils.createMail("xulide123@outlook.com", "576847219@qq.com", "hello");
+        emailUtils.sendMessage(msg);
+    }
 }

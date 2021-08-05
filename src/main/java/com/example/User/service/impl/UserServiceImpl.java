@@ -31,6 +31,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     public User verifyPassword(String username, String password){
         User user = new LambdaQueryChainWrapper<>(userMapper).eq(User::getUserName, username).one();
+        if (user == null){
+            return null;
+        }
         if (DigestUtils.md5DigestAsHex(password.getBytes(StandardCharsets.UTF_8)).equals(user.getPassword())){
             return user;
         }

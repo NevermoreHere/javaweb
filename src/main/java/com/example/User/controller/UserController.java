@@ -4,6 +4,7 @@ package com.example.User.controller;
 import com.example.User.entity.User;
 import com.example.User.service.IUserService;
 import com.example.Utils.CommonResult;
+import com.example.Utils.JwtUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,24 +28,28 @@ import java.util.Map;
  * @since 2021-07-16
  */
 @RestController
-@RequestMapping("/User/user")
+@RequestMapping("/user")
 @Api(value = "用户信息管理")
 public class UserController {
     @Autowired
     IUserService userService;
+    @Autowired
+    JwtUtils jwtUtils;
 
     @PostMapping("/login")
     @ApiOperation(value = "登录")
-    public CommonResult login(HttpServletRequest request, @RequestBody @ApiParam(value = "user login", required = true) User user) {
+    public CommonResult login(HttpServletRequest request, @RequestBody @ApiParam(value = "user login", required = true) User user) throws UnsupportedEncodingException {
         String username = user.getUserName();//用户名
         String password = user.getPassword();//密码
         //查询用户名和密码是否匹配,是否存在
         User res_user = userService.verifyPassword(username, password);
         if (null != res_user) {
             HttpSession session = request.getSession();
-            session.setAttribute(session.getId(),user);
-
-            return new CommonResult(res_user);
+            String token = jwtUtils.createJWTToken(user);
+            session.setAttribute(session.getId(),token);
+            HashMap<String, String> res = new HashMap<>();
+            res.put("token", token);
+            return new CommonResult(res);
         }
         CommonResult cr = new CommonResult<User>();
         cr.setErrorCode("401");

@@ -12,3 +12,5 @@ spring:
     host: 47.102.192.55
     port: 6380
     password:
+    database: 0
+    
