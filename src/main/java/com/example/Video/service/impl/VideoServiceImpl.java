@@ -24,12 +24,13 @@ import java.util.List;
  */
 @Service
 public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements IVideoService {
+    private static final String FILE_PATH = "/Users/xulide/Documents/target/";
+
     public boolean videoUpload(MultipartFile[] files){
 
         for (MultipartFile file : files) {
             String fileName = file.getOriginalFilename();
-            String filePath = "/Users/xulide/Documents/target/";
-            String path = filePath + fileName;
+            String path = FILE_PATH + fileName;
             File dest = new File(path);
             try {
                 file.transferTo(dest);
@@ -40,5 +41,15 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
         }
 
         return true;
+    }
+
+    public File videoDownload(String fileName){
+        String path = FILE_PATH + fileName;
+        File file = new File(path);
+
+        if (file.exists()){
+            return file;
+        }
+        return null;
     }
 }

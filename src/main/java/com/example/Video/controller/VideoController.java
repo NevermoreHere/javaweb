@@ -42,4 +42,11 @@ public class VideoController {
         service.videoUpload(files);
         return new CommonResult(new JSONObject());
     }
+
+    @PostMapping(value = "/download", headers = "content-type=multipart/form-data")
+    @ApiOperation(value = "上传")
+    public CommonResult downloadFile(@RequestParam("files") MultipartFile[] files){
+        service.videoUpload(files);
+        return new CommonResult(new JSONObject());
+    }
 }

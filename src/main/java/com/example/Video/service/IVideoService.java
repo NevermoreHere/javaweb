@@ -19,4 +19,6 @@ import java.util.List;
  */
 public interface IVideoService extends IService<Video> {
     boolean videoUpload(MultipartFile[] files);
+
+    File videoDownload(String path);
 }
