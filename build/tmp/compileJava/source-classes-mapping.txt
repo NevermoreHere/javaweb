@@ -31,6 +31,8 @@ com/example/Video/controller/VideoController.java
  com.example.Video.controller.VideoController
 com/example/Application.java
  com.example.Application
+com/example/User/mapper/UserMapper.java
+ com.example.User.mapper.UserMapper
 com/example/Utils/ReceiveMail.java
  com.example.Utils.ReceiveMail
 com/example/CodeGenerator.java
@@ -62,5 +64,7 @@ com/example/Config/RabbitMQConfig.java
  com.example.Config.RabbitMQConfig
 com/example/Utils/CommonResult.java
  com.example.Utils.CommonResult
-com/example/User/mapper/UserMapper.java
- com.example.User.mapper.UserMapper
+com/example/feign/HelloFeignController.java
+ com.example.feign.HelloFeignController
+ com.example.feign.HelloFeignController$HelloClient
+ com.example.feign.HelloFeignController$ServiceClient

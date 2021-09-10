@@ -20,9 +20,9 @@ public class MyInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception
     {
         String uri = request.getRequestURI();
-
+        System.out.println(uri);
         //判断当前请求地址是否登录地址
-        if(uri.contains("Login") || uri.contains("login") || uri.contains("register") || uri.contains("swagger") || request.getMethod().toUpperCase().equals("OPTIONS"))
+        if(uri.contains("Login") || uri.contains("login") || uri.contains("register") || uri.contains("swagger") || request.getMethod().toUpperCase().equals("OPTIONS") || uri.contains("feign"))
         {
             return true;
             //登录请求，直接放行

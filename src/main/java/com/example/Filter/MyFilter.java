@@ -33,7 +33,7 @@ public class MyFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         String uri = req.getRequestURI();
-
+        System.out.println("filter:"+uri);
         if (ALLOWED_PATHS.contains(uri)){
             chain.doFilter(request, response);
         }

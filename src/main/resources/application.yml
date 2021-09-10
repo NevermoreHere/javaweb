@@ -13,4 +13,9 @@ spring:
     port: 6380
     password:
     database: 0
-    
+
+  cloud:
+    kubernetes:
+      discovery:
+        all-namespaces: true
+
