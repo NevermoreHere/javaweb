@@ -19,3 +19,6 @@ spring:
       discovery:
         all-namespaces: true
 
+
+server:
+  port: 9999

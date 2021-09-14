@@ -49,6 +49,7 @@ dependencies {
     implementation group: 'com.baomidou', name: 'mybatis-plus-generator', version: '3.4.1'
     implementation group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.4.1'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
